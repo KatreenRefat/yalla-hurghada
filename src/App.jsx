@@ -10,7 +10,7 @@ import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home/Home";
 import Tours from "./pages/Tours/Tours";
-import Hotels from "./pages/hotels/hotels";
+import Hotels from "./pages/Hotels/hotels";
 import Restaurants from "./pages/restaurants/restaurant";
 import Transportation from "./pages/Transportation/Transportation";
 import Booking from "./pages/Booking/Booking";
