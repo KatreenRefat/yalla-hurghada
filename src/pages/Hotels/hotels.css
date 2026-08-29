@@ -1,0 +1,5 @@
+.hotels-page {
+  min-height: 100vh;
+  background: var(--yh-background);
+  padding-bottom: 80px;
+}

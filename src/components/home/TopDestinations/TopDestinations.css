@@ -1,0 +1,132 @@
+.popular-destinations {
+  padding: 80px 20px;
+  background: var(--yh-background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--yh-sky-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--yh-font-main);
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--yh-deep-sea-blue);
+  margin: 0;
+  font-family: var(--yh-font-main);
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.destination-card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--yh-shadow-lg);
+}
+
+.destination-image-wrapper {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.destination-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-image {
+  transform: scale(1.1);
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(2, 62, 138, 0.90) 0%,
+    rgba(0, 83, 159, 0.40) 40%,
+    transparent 70%
+  );
+}
+
+.destination-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  color: var(--yh-white);
+}
+
+.destination-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: var(--yh-font-main);
+}
+
+.destination-tours {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.90);
+  font-family: var(--yh-font-main);
+}
+
+.destination-tours svg {
+  font-size: 14px;
+  color: var(--yh-sky-blue);
+}
+
+@media (max-width: 1024px) {
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-image-wrapper {
+    height: 240px;
+  }
+}

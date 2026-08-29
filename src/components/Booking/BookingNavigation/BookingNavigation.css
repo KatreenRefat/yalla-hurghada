@@ -1,0 +1,47 @@
+/* src/components/Booking/BookingNavigation/BookingNavigation.css */
+
+.booking-navigation {
+  margin-top: 14px;
+}
+
+.booking-navigation__continue {
+  width: 100%;
+  padding: 14px 0;
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.booking-navigation__continue--disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.booking-navigation__continue:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.booking-navigation__secure {
+  text-align: center;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.booking-navigation__back {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 0;
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}

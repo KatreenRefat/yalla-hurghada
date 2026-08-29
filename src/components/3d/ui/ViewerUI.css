@@ -1,0 +1,319 @@
+/* ================================================================
+   ViewerUI.css — Premium 3D Viewer Interface
+   Yalla Hurghada Tourism Platform
+   ================================================================ */
+
+/* ── Scene badge (top-left) ──────────────────────────────────── */
+.vui-scene-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.vui-scene-badge__icon { font-size: 22px; line-height: 1; }
+.vui-scene-badge__type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: #90e0ef;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+  margin-bottom: 2px;
+}
+.vui-scene-badge__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+/* ── Hotspot info panel ───────────────────────────────────────── */
+.vui-hotspot-panel {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 20;
+  width: 280px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.vui-panel-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.vui-panel-close:hover {
+  background: rgba(255, 80, 80, 0.35);
+  transform: scale(1.1) rotate(90deg);
+}
+
+.vui-panel-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #90e0ef;
+  margin-bottom: 8px;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+.vui-panel-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+  line-height: 1.25;
+  padding-right: 24px;
+}
+
+.vui-panel-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+  margin: 0 0 14px;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+.vui-panel-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vui-feature-tag {
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(0, 196, 224, 0.15);
+  border: 1px solid rgba(0, 196, 224, 0.3);
+  font-size: 11px;
+  font-weight: 600;
+  color: #90e0ef;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+/* ── Camera controls bar ──────────────────────────────────────── */
+.vui-controls {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vui-ctrl-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, border-color 0.2s;
+}
+
+.vui-ctrl-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.vui-ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.06);
+}
+
+.vui-ctrl-btn.active {
+  background: rgba(0, 196, 224, 0.25);
+  border-color: rgba(0, 196, 224, 0.5);
+  color: #90e0ef;
+}
+
+.vui-quality-toggle {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+}
+
+.vui-quality-btn {
+  width: 32px;
+  height: 38px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+.vui-quality-btn.active {
+  background: rgba(0, 196, 224, 0.25);
+  color: #90e0ef;
+}
+
+/* ── Interaction hint ─────────────────────────────────────────── */
+.vui-hint {
+  position: absolute;
+  bottom: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.vui-hint__icon { font-size: 14px; }
+
+/* ── Loading overlay ──────────────────────────────────────────── */
+.vui-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 8, 24, 0.92);
+  gap: 20px;
+}
+
+.vui-loading__ring {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.vui-loading__ring-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00c4e0;
+  border-right-color: rgba(0, 196, 224, 0.35);
+  animation: vui-spin 0.9s linear infinite;
+}
+
+.vui-loading__icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+@keyframes vui-spin { to { transform: rotate(360deg); } }
+
+.vui-loading__text {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.5px;
+  margin: 0;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+/* ── FPS counter ─────────────────────────────────────────────── */
+.vui-fps {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4ade80;
+  font-family: monospace;
+  pointer-events: none;
+}
+
+/* ── Mobile responsive ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .vui-hotspot-panel {
+    top: auto;
+    bottom: 70px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+
+  .vui-scene-badge {
+    top: 12px;
+    left: 12px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .vui-scene-badge__title { font-size: 12px; }
+  .vui-hint { display: none; }
+
+  .vui-controls {
+    bottom: 12px;
+    right: 12px;
+    gap: 6px;
+  }
+
+  .vui-ctrl-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+}

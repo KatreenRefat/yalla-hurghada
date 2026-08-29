@@ -1,0 +1,102 @@
+.restaurant-testimonials-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.restaurant-testimonials-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.restaurant-testimonials-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f4da8;
+  letter-spacing: 2px;
+}
+
+.restaurant-testimonials-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #14284d;
+  margin-top: 10px;
+}
+
+.restaurant-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.restaurant-testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.restaurant-testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+.restaurant-testimonial-stars {
+  color: #ffc107;
+  margin-bottom: 10px;
+}
+
+.star {
+  color: #ddd;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.restaurant-testimonial-quote {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 40px;
+  opacity: 0.2;
+  color: #0f4da8;
+}
+
+.restaurant-testimonial-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.restaurant-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.restaurant-testimonial-author img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.restaurant-testimonial-author h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.restaurant-testimonial-author span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .restaurant-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

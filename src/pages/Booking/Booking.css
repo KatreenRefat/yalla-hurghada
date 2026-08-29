@@ -1,0 +1,65 @@
+/* src/pages/Booking/Booking.css */
+
+.booking-page {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 24px 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.booking-page__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.booking-page__layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.booking-page__main {
+  flex: 1;
+  min-width: 320px;
+}
+
+.booking-page__sidebar {
+  width: 310px;
+  flex-shrink: 0;
+}
+
+.booking-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .booking-page__layout {
+    flex-direction: column;
+  }
+
+  .booking-page__sidebar {
+    width: 100%;
+  }
+
+  .booking-page__main {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* ── DARK MODE ─────────────────────────────────────── */
+body.dark-mode .booking-page {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .booking-page__inner {
+  color: #e2e8f0;
+}
+body.dark-mode .booking-header__title {
+  color: #ffffff;
+}

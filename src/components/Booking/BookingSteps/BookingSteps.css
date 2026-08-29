@@ -1,0 +1,85 @@
+/* src/components/Booking/BookingSteps/BookingSteps.css */
+
+.booking-steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  overflow-x: auto;
+  gap: 0;
+}
+
+.booking-steps__item {
+  display: flex;
+  align-items: center;
+}
+
+.booking-steps__item--flex {
+  flex: 1;
+}
+
+.booking-steps__label-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.booking-steps__circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.booking-steps__circle--done {
+  background: #10b981;
+  color: #fff;
+}
+
+.booking-steps__circle--active {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.booking-steps__text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.booking-steps__text--active {
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.booking-steps__text--done {
+  color: #10b981;
+}
+
+.booking-steps__line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 8px;
+  min-width: 20px;
+}
+
+.booking-steps__line--done {
+  background: #10b981;
+}
+
+@media (max-width: 600px) {
+  .booking-steps__text {
+    display: none;
+  }
+  .booking-steps__text--active {
+    display: inline;
+  }
+}

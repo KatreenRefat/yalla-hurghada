@@ -1,0 +1,88 @@
+import hotelHero from "../assets/photoslider.webp";
+
+export const featuredHotelData = [
+  {
+    id: 1,
+    category: "Resort",
+    title: "Steigenberger Al Dau Beach Hotel",
+    location: "Hurghada, Red Sea Riviera",
+    rating: 4.9,
+    reviews: 1240,
+    description:
+      "Indulge in world-class luxury at our beachfront resort. Featuring private beach access, multiple pools, award-winning restaurants, and a full-service spa. Perfect for couples seeking a romantic escape or families looking for an unforgettable Red Sea experience.",
+    features: [
+      { icon: "wifi", label: "Free WiFi" },
+      { icon: "snowflake", label: "Air Conditioned" },
+      { icon: "crown", label: "5-Star Luxury" },
+      { icon: "waves", label: "Private Beach" },
+      { icon: "utensils", label: "All Inclusive" },
+      { icon: "headset", label: "24/7 Concierge" },
+    ],
+    info: [
+      { icon: "people", label: "Sleeps 2 - 4 Guests" },
+      { icon: "bed", label: "King & Twin Rooms" },
+      { icon: "clock", label: "Check-in 3:00 PM" },
+      { icon: "x-circle", label: "Free Cancellation Up to 48h" },
+    ],
+    price: 320,
+    priceLabel: "night",
+    image: hotelHero,
+    badges: ["5 Star", "All Inclusive"],
+  },
+  {
+    id: 2,
+    category: "Boutique Hotel",
+    title: "Coral Sands Boutique Retreat",
+    location: "El Gouna, Red Sea",
+    rating: 4.8,
+    reviews: 540,
+    description:
+      "A charming boutique hotel nestled in the heart of El Gouna's lagoons. Enjoy intimate rooms, rooftop dining, a private pool, and curated snorkeling excursions just steps from your door.",
+    features: [
+      { icon: "wifi", label: "Free WiFi" },
+      { icon: "crown", label: "Boutique Experience" },
+      { icon: "waves", label: "Lagoon Views" },
+      { icon: "utensils", label: "Rooftop Restaurant" },
+      { icon: "snowflake", label: "Air Conditioned" },
+      { icon: "headset", label: "24/7 Support" },
+    ],
+    info: [
+      { icon: "people", label: "Sleeps 2 Guests" },
+      { icon: "bed", label: "Deluxe & Suite Rooms" },
+      { icon: "clock", label: "Check-in 2:00 PM" },
+      { icon: "x-circle", label: "Free Cancellation Up to 24h" },
+    ],
+    price: 175,
+    priceLabel: "night",
+    image: hotelHero,
+    badges: ["Boutique", "Lagoon View"],
+  },
+  {
+    id: 3,
+    category: "Villa",
+    title: "Royal Palms Private Villa",
+    location: "Sahl Hasheesh, Hurghada",
+    rating: 4.9,
+    reviews: 88,
+    description:
+      "Experience unmatched privacy in your own beachfront villa. Complete with a private infinity pool, personal chef service, daily housekeeping, and direct access to a pristine stretch of Red Sea coastline.",
+    features: [
+      { icon: "wifi", label: "Free WiFi" },
+      { icon: "crown", label: "VIP Service" },
+      { icon: "waves", label: "Private Pool" },
+      { icon: "utensils", label: "Personal Chef" },
+      { icon: "snowflake", label: "Air Conditioned" },
+      { icon: "headset", label: "24/7 Butler" },
+    ],
+    info: [
+      { icon: "people", label: "Sleeps 6 - 8 Guests" },
+      { icon: "bed", label: "4 Bedrooms" },
+      { icon: "clock", label: "Check-in Flexible" },
+      { icon: "x-circle", label: "Free Cancellation Up to 72h" },
+    ],
+    price: 950,
+    priceLabel: "night",
+    image: hotelHero,
+    badges: ["Private Villa", "Luxury"],
+  },
+];

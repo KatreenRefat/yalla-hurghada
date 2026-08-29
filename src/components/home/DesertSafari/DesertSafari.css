@@ -1,0 +1,245 @@
+.desert-safari-v2 {
+  padding: 100px 20px;
+  background: var(--yh-gradient-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.desert-safari-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.ds2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ds2-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ds2-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--yh-sky-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--yh-font-main);
+}
+
+.ds2-title {
+  font-size: 40px;
+  color: var(--yh-sky-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--yh-font-main);
+}
+
+.ds2-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--yh-white);
+  margin: 0;
+  font-family: var(--yh-font-main);
+}
+
+.ds2-description {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.70);
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.6;
+  font-family: var(--yh-font-main);
+  margin: 0;
+}
+
+.ds2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ds2-card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.ds2-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.30);
+}
+
+.ds2-image-wrapper {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.ds2-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ds2-card:hover .ds2-image {
+  transform: scale(1.08);
+}
+
+.ds2-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 62, 138, 0.20) 0%,
+    rgba(0, 83, 159, 0.50) 40%,
+    rgba(2, 62, 138, 0.90) 100%
+  );
+}
+
+.ds2-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--yh-sunset-orange);
+  color: var(--yh-white);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--yh-font-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ds2-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  color: var(--yh-white);
+}
+
+.ds2-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  font-family: var(--yh-font-main);
+}
+
+.ds2-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+  font-family: var(--yh-font-main);
+}
+
+.ds2-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ds2-price-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ds2-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--yh-sky-blue);
+  font-family: var(--yh-font-main);
+}
+
+.ds2-duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: var(--yh-font-main);
+}
+
+.ds2-duration svg {
+  font-size: 14px;
+}
+
+.book-now-btn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: var(--yh-white);
+  color: var(--yh-deep-sea-blue);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--yh-font-main);
+  border: 2px solid var(--yh-deep-sea-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.book-now-btn:hover {
+  background: var(--yh-gradient-primary);
+  color: var(--yh-white);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--yh-shadow-primary);
+}
+
+@media (max-width: 1024px) {
+  .ds2-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ds2-image-wrapper {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ds2-title {
+    font-size: 32px;
+  }
+  
+  .ds2-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ds2-image-wrapper {
+    height: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ds2-title {
+    font-size: 28px;
+  }
+  
+  .ds2-card-title {
+    font-size: 20px;
+  }
+  
+  .ds2-price {
+    font-size: 24px;
+  }
+}

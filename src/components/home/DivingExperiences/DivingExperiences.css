@@ -1,0 +1,234 @@
+.diving-experiences {
+  padding: 100px 20px;
+  background: var(--yh-background);
+}
+
+.de-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.de-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+
+.de-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.de-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--yh-ocean-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--yh-font-main);
+}
+
+.de-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--yh-deep-sea-blue);
+  margin: 0;
+  font-family: var(--yh-font-main);
+}
+
+.de-view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--yh-primary-blue);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: var(--yh-font-main);
+  transition: all 0.3s ease;
+}
+
+.de-view-all:hover {
+  color: var(--yh-deep-sea-blue);
+  gap: 12px;
+}
+
+.diving-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.diving-card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.diving-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--yh-shadow-lg);
+}
+
+.diving-image-wrapper {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+}
+
+.diving-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.diving-card:hover .diving-image {
+  transform: scale(1.08);
+}
+
+.diving-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 62, 138, 0.20) 0%,
+    rgba(0, 83, 159, 0.60) 50%,
+    rgba(2, 62, 138, 0.90) 100%
+  );
+}
+
+.diving-badges {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+}
+
+.badge-depth {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(10px);
+  color: var(--yh-white);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--yh-font-main);
+}
+
+.badge-level {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--yh-ocean-blue);
+  color: var(--yh-white);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--yh-font-main);
+}
+
+.diving-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  color: var(--yh-white);
+}
+
+.diving-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  font-family: var(--yh-font-main);
+}
+
+.diving-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+  font-family: var(--yh-font-main);
+}
+
+.diving-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.diving-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--yh-sky-blue);
+  font-family: var(--yh-font-main);
+}
+
+.diving-footer .book-now-btn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: var(--yh-white);
+  color: var(--yh-deep-sea-blue);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--yh-font-main);
+  border: 2px solid var(--yh-deep-sea-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.diving-footer .book-now-btn:hover {
+  background: var(--yh-gradient-primary);
+  color: var(--yh-white);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--yh-shadow-primary);
+}
+
+@media (max-width: 1024px) {
+  .diving-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diving-image-wrapper {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .de-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .diving-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diving-image-wrapper {
+    height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .de-title {
+    font-size: 28px;
+  }
+
+  .diving-image-wrapper {
+    height: 340px;
+  }
+
+  .diving-title {
+    font-size: 20px;
+  }
+
+  .diving-price {
+    font-size: 24px;
+  }
+}

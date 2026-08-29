@@ -1,0 +1,200 @@
+.tour-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.tour-modal {
+  background: white;
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  max-height: 80vh;
+}
+
+.tour-modal-left {
+  flex: 1;
+  position: relative;
+}
+
+.tour-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tour-modal-gallery {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.tour-modal-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tour-tags-modal {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.tour-tag-modal {
+  background: rgba(255,255,255,0.9);
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #0091ff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.tour-modal-right {
+  flex: 1;
+  padding: 24px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.tour-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.tour-type-badge {
+  display: inline-block;
+  background: #e0f7ff;
+  color: #0091ff;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.tour-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #ffb703;
+}
+
+.tour-location {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.tour-price-box {
+  background: #f0f7ff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.tour-features-modal {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.tour-description {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.tour-included-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tour-included-services li {
+  margin-bottom: 4px;
+}
+
+.tour-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #f2f2f2;
+  color: #333;
+  border-radius: 8px;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+.tour-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.233);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .tour-modal {
+    flex-direction: column;
+    max-height: 90vh;
+  }
+
+  .tour-modal-left,
+  .tour-modal-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .tour-modal-gallery {
+    justify-content: center;
+  }
+}

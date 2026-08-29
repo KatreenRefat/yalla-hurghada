@@ -1,0 +1,47 @@
+.contactSection {
+  width: 100%;
+  min-height: 350px;
+  background-color: var(--yh-primary-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contactContent {
+  max-width: 700px;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.subtitle {
+  color: var(--yh-soft-cyan);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contactContent h1 {
+  color: var(--yh-white);
+  font-size: 58px;
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.contactContent p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contactContent h1 {
+    font-size: 40px;
+  }
+
+  .contactContent p {
+    font-size: 18px;
+  }
+}

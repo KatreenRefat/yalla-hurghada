@@ -1,0 +1,134 @@
+.island-adventures {
+  padding: 100px 20px;
+  background: #f8fafc;
+}
+
+body.dark-mode .island-adventures {
+  background: #0f172a !important;
+}
+
+.ia-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ia-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ia-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--yh-ocean-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ia-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--yh-deep-sea-blue);
+  margin: 8px 0;
+}
+
+.ia-description {
+  font-size: 16px;
+  color: var(--yh-muted);
+}
+
+.islands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.island-card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  height: 320px;
+}
+
+.island-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.island-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.island-card:hover .island-image {
+  transform: scale(1.08);
+}
+
+.island-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(2, 62, 138, 0.90) 0%,
+    rgba(0, 83, 159, 0.40) 60%,
+    transparent 100%
+  );
+}
+
+.island-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  color: white;
+}
+
+.island-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.island-tours {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+}
+
+.book-now-btn {
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: white;
+  color: var(--yh-deep-sea-blue);
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background: var(--yh-ocean-blue);
+  color: white;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .islands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .islands-grid {
+    grid-template-columns: 1fr;
+  }
+}

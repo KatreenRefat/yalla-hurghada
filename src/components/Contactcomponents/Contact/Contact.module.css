@@ -1,0 +1,159 @@
+.contact {
+  padding: 80px 10%;
+  background: var(--yh-background);
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.contactInfo h2 {
+  color: var(--yh-heading);
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.contactInfo > p {
+  color: var(--yh-muted);
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background: var(--yh-card-bg);
+  border: 1px solid var(--yh-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: var(--yh-primary-blue);
+  font-size: 22px;
+}
+
+.infoItem h4 {
+  margin: 0 0 6px;
+  color: var(--yh-heading);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.infoItem p {
+  margin: 0;
+  color: var(--yh-muted);
+}
+
+.contactForm {
+  flex: 0 1 600px;
+  background: var(--yh-card-bg);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: var(--yh-shadow-sm);
+}
+
+.contactForm h2 {
+  margin-bottom: 25px;
+  color: var(--yh-heading);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.inputGroup label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--yh-text);
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--yh-border);
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  background: var(--yh-card-bg);
+  color: var(--yh-text);
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: var(--yh-primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 83, 159, 0.15);
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contactForm button {
+  width: 100%;
+  padding: 15px;
+  background: var(--yh-primary-blue);
+  color: var(--yh-white);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contactForm button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .contactContainer {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 20px;
+  }
+
+  .contactContainer {
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

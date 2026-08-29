@@ -1,0 +1,46 @@
+/* src/components/common/FormField/FormField.css */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-field__input-wrapper {
+  position: relative;
+}
+
+.form-field__icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.form-field__input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font-size: 13px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-field__input:focus {
+  border-color: #1d4ed8;
+}
+
+.form-field__input--with-icon {
+  padding-left: 30px;
+}

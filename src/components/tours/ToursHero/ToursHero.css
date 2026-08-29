@@ -1,0 +1,157 @@
+.tours-hero {
+  position: relative;
+  min-height: 600px;
+  padding: 96px 0 120px;     /* ← نفس TransportationHero */
+  overflow: visible;        /* ← نفس TransportationHero */
+  color: var(--yh-white);
+  background: var(--yh-deep-sea-blue);
+}
+
+/* hero Image */
+.tours-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.tours-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: heroImageZoom 14s ease-in-out infinite alternate;
+}
+
+.tours-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 62, 138, 0.70) 0%,
+      rgba(2, 62, 138, 0.60) 22%,
+      rgba(0, 83, 159, 0.35) 45%,
+      rgba(0, 119, 182, 0.10) 68%,
+      rgba(0, 119, 182, 0.00) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 62, 138, 0.10) 0%,
+      rgba(2, 62, 138, 0.05) 45%,
+      rgba(2, 62, 138, 0.15) 100%
+    );
+}
+
+.tours-hero-inner {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hero Content */
+.tours-hero-content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  animation: heroFadeDown 0.9s ease forwards;
+}
+
+.tours-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  margin-bottom: 22px;
+  border-radius: var(--yh-radius-pill);
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--yh-white);
+  font-size: var(--yh-text-sm);
+  font-weight: var(--yh-weight-semibold);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.tours-hero-content h1 {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color: var(--yh-white);
+  font-size: clamp(38px, 5vw, var(--yh-text-hero));
+  font-weight: var(--yh-weight-black);
+  line-height: 1.05;
+  letter-spacing: -1.8px;
+}
+
+.tours-hero-content p {
+  max-width: 660px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: var(--yh-text-lg);
+  line-height: 1.8;
+}
+
+.highlight-blue {
+  color: var(--yh-sky-blue);
+}
+
+/* Animations */
+@keyframes heroFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+/* Responsive - نفس TransportationHero */
+@media (max-width: 992px) {
+  .tours-hero {
+    padding: 84px 0 112px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tours-hero {
+    min-height: auto;
+    padding: 70px 0 46px;
+  }
+
+  .tours-hero-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tours-hero-content h1 {
+    letter-spacing: -0.8px;
+  }
+
+  .tours-hero-badge {
+    font-size: var(--yh-text-xs);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tours-hero-content,
+  .tours-hero-image {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

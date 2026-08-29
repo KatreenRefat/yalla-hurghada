@@ -1,0 +1,111 @@
+/* src/components/Booking/PromoCodes/PromoCodes.css */
+
+.promo-codes {
+  margin-top: 10px;
+}
+
+.promo-codes__section-title {
+  font-weight: 600;
+  font-size: 12px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.promo-codes__item {
+  border: 1px solid #d1fae5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #fff;
+}
+
+.promo-codes__item--active {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.promo-codes__item--locked {
+  border-color: #e5e7eb;
+  background: #f9fafb;
+  opacity: 0.65;
+}
+
+.promo-codes__item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-codes__label {
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 3px;
+  color: #111;
+}
+
+.promo-codes__label--locked {
+  color: #9ca3af;
+}
+
+.promo-codes__expiry {
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.promo-codes__apply-btn {
+  background: #eff6ff;
+  color: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.promo-codes__apply-btn--active {
+  background: #10b981;
+  color: #fff;
+}
+
+.promo-codes__input-section {
+  margin-top: 8px;
+}
+
+.promo-codes__input-label {
+  font-weight: 600;
+  font-size: 12px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.promo-codes__input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.promo-codes__input {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  outline: none;
+}
+
+.promo-codes__submit-btn {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.promo-codes__error {
+  color: #ef4444;
+  font-size: 11px;
+  margin-top: 4px;
+}

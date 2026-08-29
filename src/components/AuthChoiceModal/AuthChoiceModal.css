@@ -1,0 +1,81 @@
+.acm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.acm-modal {
+  background: var(--yh-card-bg, #fff);
+  border-radius: 20px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.acm-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--yh-text, #1a202c);
+  margin-bottom: 8px;
+}
+
+.acm-question {
+  font-size: 0.95rem;
+  color: var(--yh-text-secondary, #64748b);
+  margin-bottom: 24px;
+}
+
+.acm-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.acm-btn-yes,
+.acm-btn-no {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.acm-btn-yes {
+  background: var(--yh-primary, #0ea5e9);
+  color: #fff;
+}
+
+.acm-btn-yes:hover {
+  background: var(--yh-primary-dark, #0284c7);
+}
+
+.acm-btn-no {
+  background: var(--yh-border, #e2e8f0);
+  color: var(--yh-text, #1a202c);
+}
+
+.acm-btn-no:hover {
+  background: #cbd5e1;
+}
+
+.acm-cancel {
+  background: none;
+  border: none;
+  color: var(--yh-text-secondary, #94a3b8);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.acm-cancel:hover {
+  color: var(--yh-text, #1a202c);
+}

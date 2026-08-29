@@ -1,0 +1,26 @@
+/* src/components/common/PriceRow/PriceRow.css */
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.price-row__label {
+  color: #6b7280;
+}
+
+.price-row__value {
+  font-weight: 600;
+}
+
+.price-row--bold {
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.price-row--bold .price-row__label {
+  color: #111;
+}

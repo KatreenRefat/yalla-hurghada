@@ -1,0 +1,84 @@
+/* src/components/Booking/Confirmation/Confirmation.css */
+
+.confirmation {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.confirmation__icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: #d1fae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 28px;
+}
+
+.confirmation__title {
+  margin: 0 0 8px;
+  color: #111;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.confirmation__subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.confirmation__details {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.confirmation__ref-label {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.confirmation__ref-value {
+  font-weight: 800;
+  font-size: 18px;
+  color: #1d4ed8;
+  margin-bottom: 14px;
+}
+
+.confirmation__services-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.confirmation__service-line {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.confirmation__check {
+  color: #10b981;
+}
+
+.confirmation__points-banner {
+  background: #fef3c7;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #92400e;
+}
+
+.confirmation__points-total {
+  font-size: 12px;
+}

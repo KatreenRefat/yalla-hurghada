@@ -1,0 +1,679 @@
+/* ================================================================
+   ARModal.css — Production-Grade AR Experience Styles
+   Yalla Hurghada · Tourism Platform
+   Uses project CSS variables (--yh-*)
+   Zero conflicts with existing styles — fully additive
+   ================================================================ */
+
+/* ── Overlay ─────────────────────────────────────────────────── */
+.ar-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(1, 12, 34, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: ar-overlay-in 0.3s ease forwards;
+}
+.ar-modal-overlay--exited { animation: ar-overlay-out 0.28s ease forwards; }
+@keyframes ar-overlay-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ar-overlay-out { from { opacity: 1; } to { opacity: 0; } }
+
+/* ── Modal shell ─────────────────────────────────────────────── */
+.ar-modal {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 40px 100px rgba(1,12,34,0.65), 0 0 0 1px rgba(255,255,255,0.07) inset;
+  padding: 28px 28px 24px;
+  animation: ar-modal-in 0.38s cubic-bezier(0.34, 1.42, 0.64, 1) forwards;
+  scrollbar-width: none;
+  color: #fff;
+  transition: max-width 0.4s ease, max-height 0.4s ease, border-radius 0.4s ease, padding 0.4s ease;
+}
+.ar-modal::-webkit-scrollbar { display: none; }
+.ar-modal--fullscreen {
+  max-width: 680px;
+  max-height: 95vh;
+  padding: 0;
+  border-radius: 22px;
+  overflow: hidden;
+}
+@keyframes ar-modal-in {
+  from { opacity: 0; transform: scale(0.86) translateY(28px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── Per-type backgrounds ─────────────────────────────────────── */
+.ar-scene--diving  { background: linear-gradient(155deg,rgba(0,55,110,0.82) 0%,rgba(0,100,160,0.65) 100%); }
+.ar-scene--safari  { background: linear-gradient(155deg,rgba(100,50,10,0.88) 0%,rgba(180,110,30,0.62) 100%); }
+.ar-scene--yacht   { background: linear-gradient(155deg,rgba(1,35,90,0.84) 0%,rgba(0,130,190,0.60) 100%); }
+.ar-scene--default { background: linear-gradient(155deg,rgba(20,20,70,0.85) 0%,rgba(50,50,160,0.60) 100%); }
+
+/* ── Close button ────────────────────────────────────────────── */
+.ar-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.25s;
+  z-index: 100;
+  padding: 0;
+}
+.ar-modal-close:hover { background: rgba(255,255,255,0.2); transform: scale(1.1) rotate(90deg); }
+
+/* ── Header ──────────────────────────────────────────────────── */
+.ar-modal-header { margin-bottom: 20px; }
+.ar-modal-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 12px;
+}
+.ar-badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: ar-pulse 1.6s ease infinite;
+  display: inline-block;
+}
+@keyframes ar-pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.55; transform:scale(0.75); }
+}
+.ar-modal-title {
+  font-size: 22px; font-weight: 800; color: #fff;
+  margin: 0 0 10px; line-height: 1.25; padding-right: 38px;
+  font-family: var(--yh-font-main);
+}
+.ar-modal-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.ar-modal-location,
+.ar-modal-price { font-size: 13px; color: rgba(255,255,255,0.76); font-family: var(--yh-font-main); }
+.ar-modal-price strong { color: #fff; font-weight: 700; }
+
+/* ── Star rating ─────────────────────────────────────────────── */
+.ar-stars { display: inline-flex; align-items: center; gap: 3px; }
+.ar-star { font-size: 15px; line-height: 1; }
+.ar-star--full  { color: #fbbf24; }
+.ar-star--half  { color: #fbbf24; opacity: 0.65; }
+.ar-star--empty { color: rgba(255,255,255,0.28); }
+.ar-stars-value { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.82); margin-left: 6px; font-family: var(--yh-font-main); }
+
+/* ── Preview container ───────────────────────────────────────── */
+.ar-preview-container {
+  width: 100%;
+  height: 250px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(0,0,0,0.32);
+  transition: height 0.4s ease, border-radius 0.4s ease, margin 0.4s ease;
+}
+.ar-preview-container--expanded {
+  height: 480px;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+/* ── Idle preview scene ──────────────────────────────────────── */
+.ar-preview-idle { width: 100%; height: 100%; }
+.ar-preview-scene {
+  width: 100%; height: 100%;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.ar-preview-scene.ar-scene--diving  { background: linear-gradient(180deg,#003366 0%,#0088bb 55%,#00c4e0 100%); }
+.ar-preview-scene.ar-scene--safari  { background: linear-gradient(180deg,#3a1800 0%,#b86e18 52%,#e8c060 100%); }
+.ar-preview-scene.ar-scene--yacht   { background: linear-gradient(180deg,#011844 0%,#006699 55%,#80d0ee 100%); }
+.ar-preview-scene.ar-scene--default { background: linear-gradient(180deg,#14143c 0%,#3232aa 100%); }
+
+.ar-preview-scene__label {
+  position: relative; z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.92);
+  font-size: 14px; font-weight: 700; font-family: var(--yh-font-main);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.ar-preview-scene__icon {
+  font-size: 44px;
+  animation: ar-float 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+}
+@keyframes ar-float {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-10px) scale(1.05); }
+}
+
+/* Preview hotspot hints */
+.ar-preview-hints { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.ar-preview-hint {
+  position: absolute;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  transform: translate(-50%,-50%);
+  animation: ar-hotspot-pulse 2.5s ease-in-out infinite;
+}
+@keyframes ar-hotspot-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
+  50%      { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+}
+
+/* ── Particles ───────────────────────────────────────────────── */
+.ar-scene-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.ar-particle {
+  position: absolute;
+  font-size: var(--size, 18px);
+  left: var(--x, 50%);
+  bottom: -32px;
+  animation: ar-particle-rise var(--duration, 5s) ease-in infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0.88;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+@keyframes ar-particle-rise {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.88; }
+  50%  { transform: translateY(-140px) translateX(var(--drift,8px)) rotate(10deg); opacity: 0.7; }
+  100% { transform: translateY(-290px) translateX(0) rotate(22deg); opacity: 0; }
+}
+
+/* ── Wave canvas ─────────────────────────────────────────────── */
+.ar-wave-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Scan lines ──────────────────────────────────────────────── */
+.ar-scan-lines {
+  position: absolute; inset: 0; z-index: 5;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(255,255,255,0.025) 3px, rgba(255,255,255,0.025) 4px
+  );
+  pointer-events: none;
+  animation: ar-scanline-move 8s linear infinite;
+}
+@keyframes ar-scanline-move {
+  from { background-position: 0 0; }
+  to   { background-position: 0 200px; }
+}
+
+/* ── Loader ──────────────────────────────────────────────────── */
+.ar-loader-overlay {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,8,24,0.88);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+.ar-loader-content { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.ar-loader-ring { position: relative; width: 72px; height: 72px; }
+.ar-loader-ring__track {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.08);
+}
+.ar-loader-ring__inner {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00c4e0;
+  border-right-color: rgba(0,196,224,0.4);
+  animation: ar-spin 0.85s linear infinite;
+}
+.ar-loader-ring__pulse {
+  position: absolute; inset: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,196,224,0.2) 0%, transparent 70%);
+  animation: ar-ping 1.4s ease-out infinite;
+}
+.ar-loader-ring__core {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  animation: ar-spin-reverse 4s linear infinite;
+}
+@keyframes ar-spin         { to { transform: rotate(360deg); } }
+@keyframes ar-spin-reverse { to { transform: rotate(-360deg); } }
+@keyframes ar-ping {
+  0%   { transform: scale(0.85); opacity: 0.7; }
+  70%  { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(0.85); opacity: 0; }
+}
+.ar-loader-text { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.82); letter-spacing: 0.6px; margin: 0; font-family: var(--yh-font-main); }
+.ar-loader-bar { width: 190px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden; }
+.ar-loader-bar__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0096c7, #00c4e0, #90e0ef);
+  background-size: 200% 100%;
+  animation: ar-bar-animate 1.8s ease forwards, ar-bar-shimmer 1.2s ease infinite;
+  width: var(--target-pct, 40%);
+}
+@keyframes ar-bar-animate  { from { width: 5%; } to { width: var(--target-pct, 40%); } }
+@keyframes ar-bar-shimmer  { 0%,100%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } }
+.ar-loader-steps {
+  display: flex; gap: 16px;
+  font-size: 11px; font-family: var(--yh-font-main); color: rgba(255,255,255,0.45);
+}
+.ar-loader-step--active { color: #90e0ef; font-weight: 700; }
+.ar-loader-step--done   { color: #4ade80; font-weight: 700; }
+
+/* ── Active AR experience container ──────────────────────────── */
+.ar-active-experience {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ar-active-experience--dragging { cursor: grabbing; }
+.ar-active-experience--focus .ar-in-scene-card { opacity: 0; pointer-events: none; }
+
+/* ── Environment layers ──────────────────────────────────────── */
+.ar-env-layer { position: absolute; inset: 0; }
+.ar-env-layer--sky {
+  transform: translate(calc(var(--px,0px)*0.28), calc(var(--py,0px)*0.28)) scale(1.12);
+  transition: transform 0.12s linear;
+}
+.ar-env-layer--mid {
+  background: radial-gradient(ellipse 90% 60% at 50% 85%, rgba(144,224,239,0.18) 0%, transparent 65%);
+  transform: translate(calc(var(--px,0px)*0.5), calc(var(--py,0px)*0.5));
+  transition: transform 0.1s linear;
+}
+.ar-env-layer--ground {
+  background: linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%);
+}
+.ar-env-layer--sky.ar-scene--diving  { background: linear-gradient(180deg,#002244 0%,#006699 55%,#00aacc 100%); }
+.ar-env-layer--sky.ar-scene--safari  { background: linear-gradient(180deg,#2a1000 0%,#994400 52%,#cc8800 100%); }
+.ar-env-layer--sky.ar-scene--yacht   { background: linear-gradient(180deg,#011033 0%,#004477 55%,#66b8d8 100%); }
+.ar-env-layer--sky.ar-scene--default { background: linear-gradient(180deg,#0a0a28 0%,#2222aa 100%); }
+
+/* ── Virtual object ──────────────────────────────────────────── */
+.ar-virtual-object {
+  position: absolute;
+  top: 50%; left: 50%;
+  translate: -50% -50%;
+  z-index: 6;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.ar-object-shadow {
+  width: 80px; height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.4) 0%, transparent 70%);
+  filter: blur(4px);
+  animation: ar-shadow-pulse 3s ease-in-out infinite;
+}
+@keyframes ar-shadow-pulse {
+  0%,100% { transform: scaleX(1); opacity: 0.4; }
+  50%      { transform: scaleX(0.7); opacity: 0.2; }
+}
+.ar-object-body {
+  display: flex; align-items: center; justify-content: center;
+  animation: ar-object-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+}
+@keyframes ar-object-float {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-14px) scale(1.04); }
+}
+.ar-object-icon { font-size: 64px; line-height: 1; display: block; }
+.ar-object-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 2px solid rgba(144,224,239,0.5);
+  animation: ar-ring-spin 6s linear infinite;
+  pointer-events: none;
+}
+.ar-object-ring--limited {
+  border-color: rgba(251,191,36,0.6);
+  animation-duration: 2s;
+}
+@keyframes ar-ring-spin { to { transform: rotate(360deg); } }
+
+/* ── Hotspots ────────────────────────────────────────────────── */
+.ar-hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid var(--accent, #90e0ef);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 8;
+  transition: transform 0.2s ease, background 0.2s;
+  animation: ar-hotspot-appear 0.4s ease both;
+}
+.ar-hotspot:nth-child(1) { animation-delay: 0.2s; }
+.ar-hotspot:nth-child(2) { animation-delay: 0.4s; }
+.ar-hotspot:nth-child(3) { animation-delay: 0.6s; }
+@keyframes ar-hotspot-appear {
+  from { opacity:0; transform:translate(-50%,-50%) scale(0.5); }
+  to   { opacity:1; transform:translate(-50%,-50%) scale(1); }
+}
+.ar-hotspot__ring {
+  position: absolute;
+  inset: -6px; border-radius: 50%;
+  border: 1.5px solid var(--accent, #90e0ef);
+  opacity: 0.5;
+  animation: ar-hotspot-ring 2.2s ease-in-out infinite;
+}
+@keyframes ar-hotspot-ring {
+  0%,100% { transform:scale(1); opacity:0.5; }
+  50%      { transform:scale(1.35); opacity:0.15; }
+}
+.ar-hotspot--selected,
+.ar-hotspot:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translate(-50%,-50%) scale(1.18);
+  z-index: 10;
+}
+.ar-hotspot__popup {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 175px;
+  max-width: 230px;
+  text-align: left;
+  animation: ar-popup-in 0.22s cubic-bezier(0.34,1.4,0.64,1) forwards;
+  z-index: 20;
+  white-space: normal;
+  pointer-events: none;
+}
+.ar-hotspot__popup::after {
+  content: "";
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0,0,0,0.82);
+}
+@keyframes ar-popup-in {
+  from { opacity:0; transform:translateX(-50%) translateY(6px) scale(0.94); }
+  to   { opacity:1; transform:translateX(-50%) translateY(0) scale(1); }
+}
+.ar-hotspot__popup-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 4px; font-family: var(--yh-font-main); }
+.ar-hotspot__popup-desc  { font-size: 11px; color: rgba(255,255,255,0.72); line-height: 1.45; font-family: var(--yh-font-main); }
+
+/* ── HUD ─────────────────────────────────────────────────────── */
+.ar-hud { position: absolute; inset: 10px; z-index: 7; pointer-events: none; }
+.ar-hud-corner {
+  position: absolute; width: 22px; height: 22px;
+  border-color: rgba(144,224,239,0.65); border-style: solid;
+  animation: ar-hud-glow 2.5s ease-in-out infinite;
+}
+.ar-hud-corner--tl { top:0;    left:0;  border-width: 2px 0 0 2px; }
+.ar-hud-corner--tr { top:0;    right:0; border-width: 2px 2px 0 0; }
+.ar-hud-corner--bl { bottom:0; left:0;  border-width: 0 0 2px 2px; }
+.ar-hud-corner--br { bottom:0; right:0; border-width: 0 2px 2px 0; }
+@keyframes ar-hud-glow { 0%,100%{ opacity:0.65; } 50%{ opacity:1; } }
+
+.ar-hud-top {
+  position: absolute;
+  top: 12px; left: 14px; right: 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  z-index: 9; pointer-events: none;
+}
+.ar-hud-badge {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 1.1px;
+  text-transform: uppercase; color: #4ade80; font-family: var(--yh-font-main);
+}
+.ar-hud-badge__dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #4ade80;
+  animation: ar-pulse 1.3s ease infinite; display: inline-block;
+}
+.ar-hud-env { font-size: 10px; color: rgba(255,255,255,0.68); font-family: var(--yh-font-main); }
+
+/* ── Tracking indicator ──────────────────────────────────────── */
+.ar-tracking-indicator { display: flex; align-items: center; gap: 5px; }
+.ar-tracking-bars { display: flex; align-items: flex-end; gap: 2px; height: 14px; }
+.ar-tracking-bar {
+  width: 4px; border-radius: 2px; background: rgba(255,255,255,0.2);
+  transition: background 0.4s, height 0.4s;
+}
+.ar-tracking-bar:nth-child(1) { height: 6px; }
+.ar-tracking-bar:nth-child(2) { height: 10px; }
+.ar-tracking-bar:nth-child(3) { height: 14px; }
+.ar-tracking-bar--active { background: var(--bar-color, #4ade80); }
+.ar-tracking-label { font-size: 9px; font-weight: 700; font-family: var(--yh-font-main); }
+
+/* ── In-scene tour card ──────────────────────────────────────── */
+.ar-in-scene-card {
+  position: absolute;
+  bottom: 60px; left: 14px;
+  background: rgba(0,0,0,0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  padding: 12px 16px;
+  z-index: 9;
+  min-width: 185px;
+  animation: ar-card-in 0.45s cubic-bezier(0.34,1.4,0.64,1) forwards;
+  transition: opacity 0.3s, transform 0.3s;
+}
+@keyframes ar-card-in {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.ar-in-scene-card__title    { font-size: 13px; font-weight: 700; color:#fff; margin:0 0 4px; font-family: var(--yh-font-main); }
+.ar-in-scene-card__location { font-size:11px; color:rgba(255,255,255,0.6); margin:0 0 6px; font-family: var(--yh-font-main); }
+.ar-in-scene-card__price    { display:flex; align-items:baseline; gap:4px; margin-top:6px; font-family: var(--yh-font-main); }
+.ar-in-scene-card__price span,
+.ar-in-scene-card__price small { font-size:11px; color:rgba(255,255,255,0.58); }
+.ar-in-scene-card__price strong { font-size:19px; font-weight:800; color:#90e0ef; }
+
+/* ── Control bar ─────────────────────────────────────────────── */
+.ar-controls {
+  position: absolute;
+  bottom: 14px; right: 14px;
+  display: flex; flex-direction: column; gap: 8px;
+  z-index: 12;
+}
+.ar-ctrl-btn {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.ar-ctrl-btn:hover         { background: rgba(255,255,255,0.18); transform: scale(1.08); }
+.ar-ctrl-btn--active       { background: rgba(144,224,239,0.3); border-color: #90e0ef; }
+.ar-ctrl-btn--exit:hover   { background: rgba(255,70,70,0.4); border-color: rgba(255,70,70,0.5); }
+
+/* ── Scale indicator ─────────────────────────────────────────── */
+.ar-scale-indicator {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 16px; font-weight: 700; color: #90e0ef;
+  font-family: var(--yh-font-main);
+  pointer-events: none;
+  animation: ar-scale-in 0.2s ease;
+  z-index: 15;
+}
+@keyframes ar-scale-in {
+  from { opacity:0; transform:translate(-50%,-50%) scale(0.8); }
+  to   { opacity:1; transform:translate(-50%,-50%) scale(1); }
+}
+
+/* ── Tracking lost ───────────────────────────────────────────── */
+.ar-tracking-lost {
+  position: absolute; inset: 0; z-index: 20;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  color: #fff; text-align: center; gap: 8px;
+  animation: ar-overlay-in 0.3s ease;
+}
+.ar-tracking-lost__icon { font-size: 44px; animation: ar-float 2s ease-in-out infinite; }
+.ar-tracking-lost p    { font-size: 18px; font-weight: 700; margin: 0; font-family: var(--yh-font-main); }
+.ar-tracking-lost span { font-size: 13px; color: rgba(255,255,255,0.65); font-family: var(--yh-font-main); }
+
+/* ── Onboarding ──────────────────────────────────────────────── */
+.ar-onboarding {
+  position: absolute; inset: 0; z-index: 18;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 60%);
+  animation: ar-overlay-in 0.3s ease;
+}
+.ar-onboarding-card {
+  width: 100%; max-width: 340px;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  animation: ar-card-in 0.4s cubic-bezier(0.34,1.4,0.64,1) forwards;
+}
+.ar-onboarding-icon  { font-size: 38px; }
+.ar-onboarding-title { font-size: 17px; font-weight: 800; color:#fff; margin:0; text-align:center; font-family: var(--yh-font-main); }
+.ar-onboarding-desc  { font-size: 13px; color: rgba(255,255,255,0.72); text-align:center; margin:0; line-height:1.5; font-family: var(--yh-font-main); }
+.ar-onboarding-dots  { display:flex; gap:7px; }
+.ar-onboarding-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.28); border:none; cursor:pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.ar-onboarding-dot.active { background: #90e0ef; transform: scale(1.3); }
+.ar-onboarding-actions { display:flex; gap:10px; width:100%; }
+
+/* ── Tour detail pills ───────────────────────────────────────── */
+.ar-tour-details { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.ar-detail-pill {
+  display:flex; align-items:center; gap:7px;
+  padding:6px 13px; border-radius:999px;
+  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.14);
+  font-size:12px; font-weight:600; color:rgba(255,255,255,0.84);
+  font-family: var(--yh-font-main);
+}
+
+/* ── Feature tags ─────────────────────────────────────────────── */
+.ar-feature-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+.ar-feature-tag {
+  padding:4px 11px; border-radius:999px;
+  background:rgba(144,224,239,0.12); border:1px solid rgba(144,224,239,0.25);
+  font-size:11px; font-weight:600; color:rgba(144,224,239,0.9);
+  font-family: var(--yh-font-main); letter-spacing:0.3px;
+}
+
+/* ── Action buttons ──────────────────────────────────────────── */
+.ar-modal-actions { display:flex; flex-direction:column; gap:10px; }
+.ar-btn {
+  width:100%; display:flex; align-items:center; justify-content:center; gap:10px;
+  padding:14px 24px; border-radius:14px; border:none;
+  font-size:15px; font-weight:700; cursor:pointer;
+  transition:all 0.25s ease; font-family: var(--yh-font-main); letter-spacing:0.2px;
+}
+.ar-btn:disabled { opacity:0.6; cursor:not-allowed; transform:none !important; }
+.ar-btn--sm { padding:10px 20px; font-size:13px; border-radius:11px; width:auto; }
+.ar-btn--primary {
+  background: linear-gradient(135deg,#0096c7 0%,#0077b6 100%);
+  color:#fff; box-shadow:0 8px 26px rgba(0,150,199,0.42);
+}
+.ar-btn--primary:not(:disabled):hover { transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,150,199,0.58); }
+.ar-btn--secondary {
+  background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.82);
+  border:1px solid rgba(255,255,255,0.18);
+}
+.ar-btn--secondary:hover { background:rgba(255,255,255,0.18); color:#fff; }
+.ar-btn--ghost {
+  background:transparent; color:rgba(255,255,255,0.55);
+  border:1px solid rgba(255,255,255,0.1);
+}
+.ar-btn--ghost:hover { color:rgba(255,255,255,0.82); }
+.ar-btn__icon    { font-size:18px; }
+.ar-btn__spinner {
+  width:18px; height:18px; border-radius:50%;
+  border:2px solid rgba(255,255,255,0.3); border-top-color:#fff;
+  animation:ar-spin 0.8s linear infinite; display:inline-block;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .ar-modal { padding:22px 18px 20px; border-radius:22px; }
+  .ar-modal-title { font-size:18px; }
+  .ar-preview-container { height:210px; }
+  .ar-preview-container--expanded { height:360px; }
+  .ar-btn { padding:12px 18px; font-size:14px; }
+  .ar-hotspot__popup { min-width:150px; }
+  .ar-object-icon { font-size:52px; }
+  .ar-in-scene-card { bottom:52px; }
+}
+@media (max-width: 380px) {
+  .ar-modal { padding:16px 14px 16px; }
+  .ar-preview-container { height:185px; }
+  .ar-preview-container--expanded { height:300px; }
+  .ar-feature-tags { display:none; }
+}
+
+/* ── Reduced motion support ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ar-particle, .ar-object-body, .ar-object-ring,
+  .ar-loader-ring__inner, .ar-loader-ring__pulse,
+  .ar-hotspot__ring, .ar-preview-scene__icon,
+  .ar-badge-dot, .ar-hud-badge__dot {
+    animation: none !important;
+  }
+}

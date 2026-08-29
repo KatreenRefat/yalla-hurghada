@@ -1,0 +1,138 @@
+/* ── wrapper يغطي الشاشة كلها ── */
+.signup-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ── الخلفية fixed عشان متتحركش مع الـ scroll ── */
+.signup-bg {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* ── الـ overlay fixed كمان ── */
+.signup-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #0f50a6c1;
+    z-index: -1;
+}
+
+/* ── المحتوى فوق الكل ── */
+.signup-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.signup-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.signup-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.signup-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.signup-card {
+    width: 100%;
+    max-width: 420px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 28px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.signup-login-link {
+    color: gray;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+.signup-footer {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.form-control {
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    border-color: #0e376d;
+    box-shadow: none;
+}
+
+.mb-3 {
+    margin-bottom: 0.6rem !important;
+}
+
+/* ── DARK MODE ── */
+body.dark-mode .signup-card {
+    background-color: #1e293b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .signup-card .form-label {
+    color: #e2e8f0;
+}
+
+body.dark-mode .signup-card .form-control {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .signup-card .form-control:focus {
+    border-color: #60a5fa;
+}
+
+body.dark-mode .signup-card .form-control::placeholder {
+    color: #64748b;
+}
+
+body.dark-mode .signup-login-link {
+    color: #94a3b8;
+}

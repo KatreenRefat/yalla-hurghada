@@ -1,0 +1,17 @@
+/* src/components/Booking/BookingHeader/BookingHeader.css */
+.booking-header {
+  margin-bottom: 24px;
+  padding-top: 64px;
+}
+.booking-header__title {
+  margin: 0 0 4px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+}
+
+.booking-header__subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}

@@ -1,0 +1,158 @@
+/* ================================================================
+   Model.css — Full-Screen 3D Experience Page
+   ================================================================ */
+
+.model-page {
+  position: fixed;
+  inset: 0;
+  background: #000812;
+  overflow: hidden;
+}
+
+.model-page--fullscreen {
+  z-index: 99999;
+}
+
+.model-page__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.model-page__ui {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.model-page__ui > * {
+  pointer-events: auto;
+}
+
+/* ── Back button ──────────────────────────────────────────────── */
+.model-page__back {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+  transition: background 0.2s, transform 0.15s;
+  /* push down to not overlap scene badge */
+  top: auto;
+  bottom: 18px;
+  left: 18px;
+}
+
+.model-page__back:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(-2px);
+}
+
+/* ── WebXR AR button ──────────────────────────────────────────── */
+.model-page__xr-btn {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 196, 224, 0.4);
+  background: rgba(0, 100, 140, 0.5);
+  backdrop-filter: blur(14px);
+  color: #90e0ef;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+  box-shadow: 0 4px 20px rgba(0, 150, 199, 0.25);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.model-page__xr-btn:hover {
+  background: rgba(0, 150, 200, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 150, 199, 0.45);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* ── Not found ────────────────────────────────────────────────── */
+.model-not-found {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--yh-background, #f5f9fc);
+  font-family: var(--yh-font-main, "Inter", sans-serif);
+}
+
+.model-not-found__icon {
+  font-size: 56px;
+}
+
+.model-not-found h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--yh-heading, #0f172a);
+  margin: 0;
+}
+
+.model-not-found p {
+  font-size: 15px;
+  color: var(--yh-muted, #64748b);
+  margin: 0;
+}
+
+.model-not-found__btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0096c7, #0077b6);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(0, 150, 199, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.model-not-found__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 150, 199, 0.55);
+}
+
+/* ── Mobile ───────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .model-page__back {
+    bottom: 12px;
+    left: 12px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .model-page__xr-btn {
+    bottom: 12px;
+    font-size: 13px;
+    padding: 9px 18px;
+  }
+}

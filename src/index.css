@@ -1,0 +1,139 @@
+
+
+:root {
+  --yh-primary-blue: #00539f;
+  --yh-deep-sea-blue: #023e8a;
+  --yh-primary-light: #0077b6;
+  --yh-ocean-blue: #0096c7;
+  --yh-sky-blue: #90e0ef;
+  --yh-soft-cyan: #caf0f8;
+  --yh-sand-beige: #f4e3c1;
+  --yh-sand-light: #fff7e6;
+  --yh-sunset-orange: #ff9f1c;
+  --yh-sunset-pink: #ff6b6b;
+  --yh-white: #ffffff;
+  --yh-background: #f5f9fc;
+  --yh-card-bg: #ffffff;
+  --yh-border: #dcecf8;
+  --yh-heading: #0f172a;
+  --yh-text: #334155;
+  --yh-muted: #64748b;
+
+  --yh-gradient-primary: linear-gradient(135deg, #00539f 0%, #0077b6 100%);
+  --yh-gradient-ocean: linear-gradient(135deg, #0096c7 0%, #90e0ef 100%);
+  --yh-gradient-sunset: linear-gradient(135deg, #ff6b6b 0%, #ff9f1c 100%);
+  --yh-gradient-sand: linear-gradient(135deg, #fff7e6 0%, #f4e3c1 100%);
+  --yh-gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+  --yh-shadow-xs: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --yh-shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.08);
+  --yh-shadow-md: 0 12px 30px rgba(15, 23, 42, 0.1);
+  --yh-shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.14);
+  --yh-shadow-primary: 0 14px 30px rgba(0, 83, 159, 0.25);
+  --yh-shadow-ocean: 0 16px 35px rgba(0, 150, 199, 0.22);
+  --yh-shadow-search: 0 24px 60px rgba(2, 62, 138, 0.28);
+  --yh-shadow-filter: 0 14px 35px rgba(15, 23, 42, 0.12);
+  --yh-shadow-card-hover: 0 24px 55px rgba(15, 23, 42, 0.16);
+
+  --yh-radius-xs: 8px;
+  --yh-radius-sm: 12px;
+  --yh-radius-md: 16px;
+  --yh-radius-lg: 22px;
+  --yh-radius-xl: 28px;
+  --yh-radius-pill: 999px;
+
+  --yh-font-main: "Inter", "Segoe UI", sans-serif;
+
+  --yh-text-xs: 12px;
+  --yh-text-sm: 14px;
+  --yh-text-md: 16px;
+  --yh-text-lg: 18px;
+  --yh-text-xl: 24px;
+  --yh-text-2xl: 36px;
+  --yh-text-hero: 64px;
+
+  --yh-weight-regular: 400;
+  --yh-weight-medium: 500;
+  --yh-weight-semibold: 700;
+  --yh-weight-bold: 800;
+  --yh-weight-black: 900;
+
+  --yh-transition-fast: 0.2s ease;
+  --yh-transition-normal: 0.3s ease;
+  --yh-transition-smooth: 0.45s ease;
+
+  --yh-section-padding: 80px;
+  --yh-section-padding-sm: 48px;
+}
+
+
+body.dark-mode {
+  --yh-primary-blue: #0ea5e9;        
+  --yh-deep-sea-blue: #0284c7;       
+  --yh-primary-light: #38bdf8;     
+  --yh-ocean-blue: #22d3ee;          
+  --yh-sky-blue: #67e8f9;            
+  --yh-soft-cyan: #06b6d4;       
+
+  --yh-sand-beige: #1e293b;
+  --yh-sand-light: #0f172a;
+  --yh-sunset-orange: #fbbf24;     
+  --yh-sunset-pink: #f59e0b;         
+
+  
+  --yh-white: #f8fafc;               
+  --yh-background: #0f172a;          
+  --yh-card-bg: #1e293b;            
+  --yh-border: #334155;             
+  --yh-heading: #f1f5f9;             
+  --yh-muted: #94a3b8;              
+
+  --yh-gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  --yh-gradient-ocean: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 100%);
+  --yh-gradient-sunset: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  --yh-gradient-sand: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --yh-gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+  /* Shadows - غامقة */
+  --yh-shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --yh-shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.5);
+  --yh-shadow-md: 0 12px 30px rgba(0, 0, 0, 0.6);
+  --yh-shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.7);
+  --yh-shadow-primary: 0 14px 30px rgba(14, 165, 233, 0.3);
+  --yh-shadow-ocean: 0 16px 35px rgba(34, 211, 238, 0.3);
+  --yh-shadow-search: 0 24px 60px rgba(14, 165, 233, 0.35);
+  --yh-shadow-filter: 0 14px 35px rgba(0, 0, 0, 0.5);
+  --yh-shadow-card-hover: 0 24px 55px rgba(0, 0, 0, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--yh-background);
+  color: var(--yh-text);
+  font-family: var(--yh-font-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+video {
+  max-width: 100%;
+}

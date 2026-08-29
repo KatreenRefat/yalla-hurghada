@@ -1,0 +1,16 @@
+/* src/components/common/StarRating/StarRating.css */
+
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.star-rating__stars {
+  color: #f59e0b;
+}
+
+.star-rating__value {
+  color: #6b7280;
+}

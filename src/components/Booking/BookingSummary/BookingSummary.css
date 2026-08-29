@@ -1,0 +1,105 @@
+/* src/components/Booking/BookingSummary/BookingSummary.css */
+
+.booking-summary {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  min-width: 290px;
+  font-size: 14px;
+}
+
+.booking-summary__title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.booking-summary__empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 20px 0;
+}
+
+.booking-summary__empty-icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.booking-summary__empty-text {
+  font-size: 12px;
+}
+
+.booking-summary__items {
+  margin-bottom: 10px;
+}
+
+.booking-summary__cart-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.booking-summary__cart-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.booking-summary__cart-info {
+  flex: 1;
+}
+
+.booking-summary__cart-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: #111;
+}
+
+.booking-summary__cart-category {
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.booking-summary__cart-price {
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.booking-summary__extra-row {
+  display: flex;
+  justify-content: space-between;
+  color: #374151;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.booking-summary__extra-price {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.booking-summary__totals {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.booking-summary__points-banner {
+  background: #fef3c7;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.booking-summary__points-highlight {
+  color: #d97706;
+}
